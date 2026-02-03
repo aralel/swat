@@ -4,42 +4,52 @@ Professional landing website for SWAT Pro - an advanced Soil and Water Assessmen
 
 ## Features
 
+- **Bilingual** - German (index.html) and English (en.html) versions
+- **Oasis Theme** - Dark nav, gradient hero, modern card effects
 - **Responsive Design** - Mobile-first approach with TailwindCSS
-- **Academic Styling** - Professional look suitable for research institutions
 - **Smooth Animations** - Scroll-triggered fade-in effects
 - **Contact Form** - Demo request and academic license inquiries
 
 ## Quick Start
 
 ```bash
-# Using Python
-python -m http.server 8000
+# Install dependencies
+npm install
 
-# Using Node.js
-npx serve .
+# Build CSS (required before serving)
+npm run build:css
 
-# Using PHP
-php -S localhost:8000
+# Watch for CSS changes during development
+npm run watch:css
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then serve with any static server:
+
+```bash
+npx serve .
+# or
+python -m http.server 8000
+```
+
+Open `http://localhost:8000` (or `http://localhost:3000` for serve).
 
 ## File Structure
 
 | File | Description |
 |------|-------------|
-| `index.html` | Main landing page |
-| `styles.css` | Custom CSS styles |
+| `index.html` | German landing page |
+| `en.html` | English landing page |
 | `main.js` | JavaScript functionality |
-| `CHANGELOG.md` | Version history |
-| `plan.md` | Project planning |
+| `src/input.css` | Tailwind source CSS |
+| `dist/output.css` | Built CSS (minified) |
+| `tailwind.config.js` | Tailwind configuration |
 
 ## Tech Stack
 
 - HTML5
-- TailwindCSS (via CDN)
+- TailwindCSS (CLI build)
 - Vanilla JavaScript
-- Google Fonts (Inter, Merriweather)
+- Google Fonts (DM Sans)
 
 ## Deployment
 

@@ -1,0 +1,12 @@
+{
+  "name": "swat-pro-landing",
+  "version": "1.6.2",
+  "description": "SWAT Pro Landing Page",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
