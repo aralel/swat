@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAT Pro | Next Generation Hydrologic Modeling</title>
+    <meta name="description" content="SWAT Pro – 10x faster simulations, automated reports, seamless integration. The leading solution for hydrologic research.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#1a1a2e',
+                        primary: '#4361ee',
+                        secondary: '#3f37c9',
+                        accent: '#4cc9f0',
+                        light: '#f8f9fa'
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%); }
+        .gradient-text { background: linear-gradient(90deg, #4361ee, #4cc9f0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(67, 97, 238, 0.15); }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/95 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="#home" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <span class="font-bold text-xl text-white">SWAT Pro</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors text-sm">Home</a>
+                    <a href="#features" class="text-gray-300 hover:text-white transition-colors text-sm">Features</a>
+                    <a href="#stats" class="text-gray-300 hover:text-white transition-colors text-sm">Stats</a>
+                    <a href="#customers" class="text-gray-300 hover:text-white transition-colors text-sm">Customers</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm">Contact</a>
+                    <a href="index.html" class="text-xl hover:scale-110 transition-transform" title="Deutsch">🇩🇪</a>
+                </div>
+                <div class="flex items-center space-x-4 md:hidden">
+                    <a href="index.html" class="text-xl">🇩🇪</a>
+                    <button id="mobile-menu-btn" class="text-white p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-300 hover:text-white py-2">Home</a>
+                <a href="#features" class="block text-gray-300 hover:text-white py-2">Features</a>
+                <a href="#stats" class="block text-gray-300 hover:text-white py-2">Stats</a>
+                <a href="#customers" class="block text-gray-300 hover:text-white py-2">Customers</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-hero min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+                        Next Generation <span class="gradient-text">Hydrologic Modeling</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        10x faster simulations. Automated reports. Seamless integration. Everything you need for precise watershed modeling.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="#contact" class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-lg font-semibold transition-colors text-center">
+                            Start Free Trial
+                        </a>
+                        <a href="#features" class="border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/5 transition-colors text-center">
+                            Learn More
+                        </a>
+                    </div>
+                    <div class="flex flex-wrap gap-6 text-sm text-gray-400">
+                        <span class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>30-day free trial</span>
+                        <span class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>No credit card</span>
+                        <span class="flex items-center"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Ready to use</span>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-3xl"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=450&fit=crop" alt="Dashboard" class="relative rounded-2xl shadow-2xl border border-gray-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">10x Faster</h3>
+                        <p class="text-gray-600 text-sm">Multi-core parallelization for dramatically reduced simulation times</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Automated Reports</h3>
+                        <p class="text-gray-600 text-sm">Publication-ready PDF & Word documents at the click of a button</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">Integrated Databases</h3>
+                        <p class="text-gray-600 text-sm">European soil, land use, and climate data pre-installed and ready to use</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Features of SWAT Pro</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Built for researchers and engineers who value precision, speed, and reliability.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">High-Performance Engine</h3>
+                    <p class="text-gray-600 mb-4">Optimized algorithms and parallel processing for up to 10x faster simulations than standard SWAT.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Multi-core CPU support</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Optional GPU acceleration</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Cloud scaling available</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Intelligent Reports</h3>
+                    <p class="text-gray-600 mb-4">Automatically generated, publication-ready documents with statistical analyses and interactive visualizations.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>50+ customizable templates</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>PDF, Word, LaTeX export</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Interactive charts</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Integrated Databases</h3>
+                    <p class="text-gray-600 mb-4">Instant access to European reference datasets without manual data preparation.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>European soil maps</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>CORINE land use</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Climate data archives</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Seamless GIS Integration</h3>
+                    <p class="text-gray-600 mb-4">Direct connection to QGIS and ArcGIS without data conversion or compatibility issues.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Auto watershed delineation</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>HRU generation</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Shapefile import/export</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Auto-Calibration</h3>
+                    <p class="text-gray-600 mb-4">Intelligent calibration with proven optimization algorithms and comprehensive uncertainty analysis.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>SUFI-2, GLUE, PSO</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Sensitivity analysis</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Uncertainty quantification</li>
+                    </ul>
+                </div>
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Climate Scenarios</h3>
+                    <p class="text-gray-600 mb-4">Future projections for informed decision-making in climate impact assessments.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>CMIP6 scenarios integrated</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Weather generators</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>Extreme value analyses</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-24 gradient-hero">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Stats on SWAT Pro</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Measurable results that our customers rely on every day.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">Simulation Speed</div>
+                    <div class="text-5xl font-bold text-white mb-2">10x</div>
+                    <div class="text-gray-400 text-sm">faster than standard SWAT</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">Memory Efficiency</div>
+                    <div class="text-5xl font-bold text-white mb-2">60%</div>
+                    <div class="text-gray-400 text-sm">less RAM usage</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">SWAT Compatibility</div>
+                    <div class="text-5xl font-bold text-white mb-2">100%</div>
+                    <div class="text-gray-400 text-sm">projects importable</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">Report Templates</div>
+                    <div class="text-5xl font-bold text-white mb-2">50+</div>
+                    <div class="text-gray-400 text-sm">customizable templates</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">Institutions Worldwide</div>
+                    <div class="text-5xl font-bold text-white mb-2">200+</div>
+                    <div class="text-gray-400 text-sm">using SWAT Pro</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+                    <div class="text-sm text-accent font-medium mb-2">Customer Satisfaction</div>
+                    <div class="text-5xl font-bold text-white mb-2">99%</div>
+                    <div class="text-gray-400 text-sm">would recommend us</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-center text-gray-500 text-sm mb-8 uppercase tracking-wider">Trusted by leading institutions</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                <span class="text-gray-400 font-medium text-lg">TU Munich</span>
+                <span class="text-gray-400 font-medium text-lg">ETH Zürich</span>
+                <span class="text-gray-400 font-medium text-lg">Helmholtz Centre</span>
+                <span class="text-gray-400 font-medium text-lg">UFZ Leipzig</span>
+                <span class="text-gray-400 font-medium text-lg">RWTH Aachen</span>
+                <span class="text-gray-400 font-medium text-lg">Uni Freiburg</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customers/Testimonials -->
+    <section id="customers" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Learn how SWAT Pro helps researchers and engineers achieve better results.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-light p-8 rounded-2xl">
+                    <div class="flex items-center text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-6">"SWAT Pro has cut our project timelines in half. The automated reports save us hours of work every week."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-semibold">KM</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Dr. Klaus Müller</div>
+                            <div class="text-sm text-gray-500">TU Munich, Hydrology</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light p-8 rounded-2xl">
+                    <div class="flex items-center text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-6">"The integration of European databases is a game-changer. Finally no more hours of data preparation."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-semibold">AS</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Prof. Anna Schmidt</div>
+                            <div class="text-sm text-gray-500">UFZ Leipzig</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light p-8 rounded-2xl">
+                    <div class="flex items-center text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-600 mb-6">"The support is first-class. For technical questions, we receive competent help within hours."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-primary font-semibold">TW</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Thomas Weber, PE</div>
+                            <div class="text-sm text-gray-500">Weber & Partners</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-24 bg-light">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Transparent Pricing</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Flexible licenses for every requirement – from individual research to large-scale projects.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-2">Academic</h3>
+                    <p class="text-gray-500 text-sm mb-6">For universities & research</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">Free</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Full functionality</li>
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Non-commercial use</li>
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Community support</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">Apply Now</a>
+                </div>
+                <div class="bg-primary p-8 rounded-2xl text-white relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-dark text-xs font-bold px-4 py-1 rounded-full">POPULAR</div>
+                    <h3 class="text-xl font-bold mb-2">Professional</h3>
+                    <p class="text-blue-200 text-sm mb-6">For engineering firms & consultants</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">€199</span>
+                        <span class="text-blue-200">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center text-blue-100"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Academic</li>
+                        <li class="flex items-center text-blue-100"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Commercial use</li>
+                        <li class="flex items-center text-blue-100"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Priority support</li>
+                        <li class="flex items-center text-blue-100"><svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Up to 5 users</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">30-Day Free Trial</a>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+                    <p class="text-gray-500 text-sm mb-6">For large organizations</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">Custom</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Everything in Professional</li>
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Unlimited users</li>
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Dedicated account manager</li>
+                        <li class="flex items-center text-gray-600"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>On-premise option</li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Revolutionize Your Modeling?</h2>
+            <p class="text-xl text-blue-100 mb-8">Start today with SWAT Pro. 30-day free trial – no commitments.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">Start Free</a>
+                <a href="#contact" class="border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">Schedule Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6">Talk to Us</h2>
+                    <p class="text-gray-600 mb-8 text-lg">Our team is happy to help with questions about SWAT Pro, licenses, or technical requirements.</p>
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Email</div>
+                                <div class="font-medium">info@swatpro.de</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Phone</div>
+                                <div class="font-medium">+49 89 123 456 78</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-500">Location</div>
+                                <div class="font-medium">Munich, Germany</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-accent/10 rounded-xl border border-accent/20">
+                        <p class="text-gray-700"><strong>Academic institutions:</strong> Free licenses available for research and teaching. Contact us for details.</p>
+                    </div>
+                </div>
+                <div>
+                    <form class="bg-light p-8 rounded-2xl">
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="john@company.com">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Organization</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="Company / University">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Interest</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
+                                <option>Free Trial</option>
+                                <option>Live Demo</option>
+                                <option>Academic License</option>
+                                <option>Professional License</option>
+                                <option>Enterprise Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message (optional)</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-4 rounded-lg font-semibold hover:bg-secondary transition-colors">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-dark text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        <span class="font-bold text-xl">SWAT Pro</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">The leading platform for hydrologic modeling in research and practice.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#stats" class="hover:text-white transition-colors">Stats</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Webinars</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Imprint</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 SWAT Pro GmbH. All rights reserved.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-xl opacity-50 hover:opacity-100 transition-opacity" title="Deutsch">🇩🇪</a>
+                    <a href="en.html" class="text-xl" title="English">🇬🇧</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
